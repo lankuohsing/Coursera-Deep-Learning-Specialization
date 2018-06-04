@@ -56,7 +56,7 @@ train_set_x = train_set_x_flatten / 255.
 test_set_x = test_set_x_flatten / 255.
 # In[]
 # GRADED FUNCTION: sigmoid
-
+#sigmoid函数定义
 def sigmoid(z):
     """
     Compute the sigmoid of z
