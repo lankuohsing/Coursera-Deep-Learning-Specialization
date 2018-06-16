@@ -97,8 +97,8 @@ def random_mini_batches(X, Y, mini_batch_size = 64, seed = 0):
     # Handling the end case (last mini-batch < mini_batch_size)
     if m % mini_batch_size != 0:
         ### START CODE HERE ### (approx. 2 lines)
-        mini_batch_X = shuffled_X[:, mini_batch_size*mini_batch_size : m]
-        mini_batch_Y = shuffled_Y[:, mini_batch_size*mini_batch_size : m]
+        mini_batch_X = shuffled_X[:, num_complete_minibatches*mini_batch_size : ]
+        mini_batch_Y = shuffled_Y[:, num_complete_minibatches*mini_batch_size : ]
         ### END CODE HERE ###
         mini_batch = (mini_batch_X, mini_batch_Y)
         mini_batches.append(mini_batch)
@@ -393,6 +393,7 @@ def model(X, Y, layers_dims, optimizer, learning_rate = 0.0007, mini_batch_size 
             a3, caches = forward_propagation(minibatch_X, parameters)
 
             # Compute cost
+            #print("minibatch_Y.shape:",minibatch_Y.shape)
             cost = compute_cost(a3, minibatch_Y)
 
             # Backward propagation
@@ -424,7 +425,7 @@ def model(X, Y, layers_dims, optimizer, learning_rate = 0.0007, mini_batch_size 
     return parameters
 # In[]
 
-# train 3-layer model# train
+# train 3-layer model
 layers_dims = [train_X.shape[0], 5, 2, 1]
 parameters = model(train_X, train_Y, layers_dims, optimizer = "gd")
 
