@@ -379,6 +379,7 @@ model.fit(x, y, batch_size=128, epochs=1, callbacks=[print_callback])
 
 # In[]
 # Run this cell to try with different inputs without having to re-train the model
+# Forsooth this maketh no sense
 generate_output()
 
 # In[]
