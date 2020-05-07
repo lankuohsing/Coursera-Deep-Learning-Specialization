@@ -361,7 +361,7 @@ def model(data, ix_to_char, char_to_ix, num_iterations = 35000, n_a = 50, dino_n
     return parameters
 
 # In[]
-'''
+
 from __future__ import print_function
 from keras.callbacks import LambdaCallback
 from keras.models import Model, load_model, Sequential
@@ -380,5 +380,5 @@ model.fit(x, y, batch_size=128, epochs=1, callbacks=[print_callback])
 # In[]
 # Run this cell to try with different inputs without having to re-train the model
 generate_output()
-'''
+
 # In[]
